@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maggi</title>
+    <link
+      rel="icon"
+      href="https://media.licdn.com/dms/image/D5603AQERrOFvc2WrXA/profile-displayphoto-shrink_200_200/0/1683381671868?e=2147483647&v=beta&t=Gp6zr0gE3o6_88sNqMxGruFloILkJV7VmmbjNkOI3Js"
+    />
+    <style>
+      pre {
+        padding-right: 10px;
+        padding-left: 10px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: xxx-large;
+      }
+      p {
+        padding-right: 10px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: medium;
+      }
+      .container {
+        position: relative;
+        font-family: Arial;
+        text-align: center;
+        color: white;
+      }
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+      }
+      .text-block {
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+        background-color: rgb(251, 255, 0);
+        color: rgb(2, 2, 2);
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+
+      .row {
+        margin-left: -5px;
+        margin-right: -5px;
+      }
+
+      .column {
+        float: left;
+        width: 50%;
+        padding: 5px;
+      }
+
+      /* Clearfix (clear floats) */
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        text-align: center;
+        padding: 16px;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #f3e93a;
+      }
+      legend{
+        background-color: #f3e93a;
+      }
+      .f1{
+        background-color: #f4ee89;
+      }
+    </style>
+  </head>
+  <body>
+    <pre
+      style="background-color: #ffff00"
+    >   <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 364.504 364.504" xml:space="preserve" width="64px" height="64px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <rect x="100.201" y="338.872" style="fill:#b86e28;" width="73" height="10"></rect> <path style="fill:#b86e28;" d="M25.83,237.872c1.254,26,9.204,49.484,22.684,67.29c9.648,9.118,21.161,15.71,34.368,20.71h96.286 c37.122-13,61.095-47,66.588-88H25.83z M82.121,303.63c-1.422,2.3-3.884,3.565-6.403,3.565c-1.348,0-2.713-0.363-3.946-1.123 c-20.159-12.461-34.048-32.402-40.165-57.67c-0.977-4.036,1.503-8.097,5.538-9.074c4.034-0.98,8.098,1.502,9.075,5.537 c5.165,21.34,16.735,38.082,33.457,48.418C83.209,295.465,84.303,300.098,82.121,303.63z"></path> <path style="fill:#b86e28;" d="M245.955,235.824c0.105-0.898,0.203-1.798,0.293-2.705 C246.157,234.024,246.061,234.927,245.955,235.824z"></path> <path style="fill:#3F2D20;" d="M79.677,293.283c-16.723-10.336-28.292-27.078-33.457-48.418c-0.977-4.035-5.041-6.517-9.075-5.537 c-4.034,0.977-6.515,5.039-5.538,9.074c6.117,25.267,20.007,45.209,40.166,57.669c1.233,0.76,2.598,1.124,3.946,1.124 c2.518,0,4.98-1.265,6.402-3.566C84.303,300.098,83.209,295.465,79.677,293.283z"></path> <path style="fill:#3F2D20;" d="M364.294,70.629c-0.969-4.037-5.025-6.515-9.064-5.555l-179.657,43.13V86.104L339,16.117 c3.817-1.635,5.585-6.053,3.951-9.869c-1.634-3.817-6.053-5.587-9.869-3.951l-157.928,67.63c-1.019-2.943-3.808-5.06-7.098-5.06 c-4.152,0-7.517,3.365-7.517,7.517v3.803l-4.561,1.953c-0.63-3.513-3.696-6.18-7.391-6.18c-4.151,0-7.517,3.365-7.517,7.517v5.048 l-4.553,1.95c-0.613-3.535-3.688-6.227-7.399-6.227c-4.152,0-7.517,3.365-7.517,7.517v5.098l-4.507,1.93 c-0.484-3.685-3.628-6.532-7.446-6.532c-4.151,0-7.517,3.365-7.517,7.517v5.422l-4.641,1.988c-0.779-3.32-3.753-5.794-7.31-5.794 c-4.152,0-7.517,3.365-7.517,7.517v4.626l-20.827,8.919c-3.816,1.635-5.585,6.053-3.95,9.869c1.22,2.852,3.995,4.56,6.913,4.56 c0.988,0,1.991-0.196,2.956-0.609l14.908-6.384v4.619l-14.352,3.445c-4.037,0.969-6.524,5.027-5.555,9.065 c0.828,3.447,3.907,5.764,7.304,5.764c0.58,0,1.171-0.068,1.761-0.209l10.842-2.603v64.431H7.517c-4.151,0-7.517,3.365-7.517,7.517 c0,28.289,6.908,54.366,19.977,75.411c12.947,20.854,31.783,36.401,54.673,45.199v16.768c0,4.152,3.365,7.517,7.517,7.517h97.717 c4.151,0,7.517-3.365,7.517-7.517V338.53c22.89-8.798,41.724-24.345,54.673-45.199c13.068-21.045,19.975-47.122,19.975-75.411 c0-4.152-3.365-7.517-7.517-7.517H117.165v-72.714l4.732-1.135c0.898,3.145,3.788,5.448,7.221,5.448 c4.152,0,7.517-3.365,7.517-7.517v-1.469l4.481-1.077c0.407,3.768,3.595,6.703,7.471,6.703c4.151,0,7.517-3.365,7.517-7.517v-2.784 l4.435-1.065v14.363c0,4.152,3.365,7.517,7.517,7.517c4.152,0,7.517-3.365,7.517-7.517v-17.971l183.167-43.973 C362.777,78.725,365.263,74.667,364.294,70.629z M172.367,347.782H89.685v-7.207h82.682V347.782z M82.882,325.541 c-40.459-14.186-65.364-51.227-67.671-100.103h231.63c-2.307,48.876-27.213,85.917-67.673,100.103H82.882z M97.697,119.453 l4.434-1.899v8.282l-4.434,1.065V119.453z M97.697,142.363l4.434-1.065v69.105h-4.434V142.363z M121.601,121.162l-4.436,1.065 v-11.111l4.436-1.899V121.162z M141.07,116.489l-4.435,1.065v-14.775l4.435-1.9V116.489z M160.539,111.815l-4.435,1.065V94.441 l4.435-1.9V111.815z"></path> </g> </g></svg>                                       <strong>Maggi</strong></pre>
+    <hr />
+    <div class="container">
+      <img
+        style="width: 100; height: 500px"
+        title="Maggi"
+        src="https://i.pinimg.com/originals/71/d6/db/71d6db959ed3f8e47e7ef8ccbf74ea7f.jpg"
+        alt=""
+      />
+      <div class="centered">
+        <div class="text-block">
+          <center><h4>Maggi</h4></center>
+        </div>
+      </div>
+    </div>
+    <!-- <hr />
+    <div class="row">
+      <div class="column">
+        <table>
+          <tr>
+            <th colspan="2">Ingredients</th>
+          </tr>
+          <tr>
+            <th>Quantity</th>
+            <th>Item Name</th>
+          </tr>
+          <tr>
+            <td>1 Packets</td>
+            <td>MAGGI 2-Minute Noodles (Masala)</td>
+          </tr>
+          <tr>
+            <td>1 Tablespoon</td>
+            <td> Oil</td>
+          </tr>
+          <tr>
+            <td>0.5 Tablespoon </td>
+            <td>Jeera</td>
+          </tr>
+          <tr>
+            <td>0.5 Cup </td>
+            <td>Onion (Chopped)</td>
+          </tr>
+          <tr>
+            <td>1 </td>
+            <td>Green Chillies (Chopped)</td>
+          </tr>
+          <tr>
+            <td>1 Tablespoon</td>
+            <td>Coriander Leaves (Chopped)</td>
+          </tr>
+          <tr>
+            <td>1 Cup</td>
+            <td>Cooked Dal</td>
+          </tr>
+          <tr>
+            <td>0.5 Cup</td>
+            <td>Warm Water</td>
+          </tr>
+          <tr>
+            <td>1 Tablespoon</td>
+            <td>Lemon Juice</td>
+          </tr>
+          
+        </table>
+      </div>
+      <div class="column">
+        <table>
+          <tr>
+            <th colspan="2">Nutrition Value</th>
+          </tr>
+          <tr>
+            <th>Type</th>
+            <th>Quantity</th>
+          </tr>
+          <tr>
+            <td>Carbohydrates</td>
+            <td>47.15 g</td>
+          </tr>
+          <tr>
+            <td>Energy</td>
+            <td>364.61 kcal</td>
+          </tr>
+          <tr>
+            <td>Fats</td>
+            <td>13.73 g</td>
+          </tr>
+          <tr>
+            <td>Protein</td>
+            <td>12.92 g</td>
+          </tr>
+        </table>
+      </div>
+    </div> -->
+
+    <fieldset class="f1">
+    <legend>About Maggi</legend>
+    <p>
+      &emsp;Maggi is a food brand that was founded in 1872 by Swiss entrepreneur
+      Julius Maggi. Maggi's mission is to make nutritious and tasty food
+      accessible to everyone, especially busy families. Maggi products are known
+      for their quality, convenience, and nutrition.
+    </p>
+    <p>
+      &emsp;Maggi's first product was a powdered pea and bean soup, which was
+      designed to be easy to prepare and nutritious for factory workers. Over
+      the years, Maggi has introduced many other products, including: Dehydrated
+      soups that were ready to cook in 1886, Maggi Liquid Seasoning sauce, Maggi
+      Bouillon cubes, and Instant noodles.
+    </p>
+    <p>
+      &emsp;In 1947, Nestlé acquired the Maggi brand. In India, Nestlé launched
+      Maggi instant noodles in 1983 and grew the brand to become one of India's
+      top food brands.
+    </p>
+  </fieldset>
+    <p>Types in making <strong>Maggi</strong> :</p>
+    <details>
+      <summary>Creamy and Cheesy Italiano MAGGI</summary>
+      <fieldset >
+      <div class="row">
+        <div class="column">
+          <table>
+            <tr>
+              <th colspan="2">Ingredients</th>
+            </tr>
+            <tr>
+              <th>Quantity</th>
+              <th>Item Name</th>
+            </tr>
+            <tr>
+              <td>2 Packets</td>
+              <td>MAGGI 2-Minute Noodles (Masala)</td>
+            </tr>
+            <tr>
+              <td>1 Tablespoon</td>
+              <td>Olive Oil</td>
+            </tr>
+            <tr>
+              <td>1 Teaspoon</td>
+              <td>Garlic</td>
+            </tr>
+            <tr>
+              <td>2 Tablespoons</td>
+              <td>Basil Leaves (Chopped)</td>
+            </tr>
+            <tr>
+              <td>0.5 Cup</td>
+              <td>Capsicum (Sliced)</td>
+            </tr>
+            <tr>
+              <td>0.25 Cup</td>
+              <td>Red Capsicum (Chopped)</td>
+            </tr>
+            <tr>
+              <td>0.25 Cup</td>
+              <td>Capsicum (Cut into 1” cubes)</td>
+            </tr>
+            <tr>
+              <td>2 Tablespoons</td>
+              <td>Cheese Spread</td>
+            </tr>
+            
+          </table>
+        </div>
+        <div class="column">
+          <table>
+            <tr>
+              <th colspan="2">Nutrition Value</th>
+            </tr>
+            <tr>
+              <th>Type</th>
+              <th>Quantity</th>
+            </tr>
+            <tr>
+              <td>Carbohydrates</td>
+              <td>51.69 g</td>
+            </tr>
+            <tr>
+              <td>Energy</td>
+              <td>402.61 kcal</td>
+            </tr>
+            <tr>
+              <td>Fats</td>
+              <td>16.59 g</td>
+            </tr>
+            <tr>
+              <td>Protein</td>
+              <td>10.4 g</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <ul>
+          <li><strong>Process of Making :</strong></li>
+          <ol>
+            <li>Prepare ingredients as mentioned in the list.</li>
+            <li>Just heat the oil and fry the garlic for about a minute. Then, toss in the basil leaves and fry them for another minute. Add all the capsicums, sauté for a couple of minutes and switch off the gas. Drop in the cheese spread and mix well.</li>
+            <li>Cook a packet of MAGGI Masala Noodles (As per the instructions on the pack) and when it’s done, lovingly pour the cheese and capsicum over the MAGGI.</li>
+            <li>Serve hot!</li>
+          </ol>
+      </ul>
+      <pre><img height="100" src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/2f05b01d54b650bb227b675908ab97f4.png?h=4462e40b&itok=nJCesNSZ" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img height="100" src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/fe3ec7bb30c1c395d99970e524a9cf3b.png?h=d1cb525d&itok=JV4jtlDS" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img height="100" src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/fa0645dc2d9bcded0c71847cc01a944b.png?h=d1cb525d&itok=TRIKdIu4" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img height="100" src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/824f0320dcb5ad343133d0e5adb4e3f3.jpg?h=a141e9ea&itok=aG55jWIL" alt=""></pre>
+    </fieldset>
+    </details>
+    <details>
+      <summary>Curry Lemon Egg Bhurji MAGGI</summary>
+      <fieldset>
+      
+    <div class="row">
+      <div class="column">
+        <table>
+          <tr>
+            <th colspan="2">Ingredients</th>
+          </tr>
+          <tr>
+            <th>Quantity</th>
+            <th>Item Name</th>
+          </tr>
+          <tr>
+            <td>2 Packets</td>
+            <td>MAGGI 2-Minute Noodles (Masala)</td>
+          </tr>
+          <tr>
+            <td>1 Tablespoon</td>
+            <td> Oil</td>
+          </tr>
+          <tr>
+            <td>1 </td>
+            <td>Onion (Chopped)</td>
+          </tr>
+          <tr>
+            <td>1 </td>
+            <td>Tomato</td>
+          </tr>
+          <tr>
+            <td>3 </td>
+            <td>Chilli Flakes</td>
+          </tr>
+          <tr>
+            <td>2 </td>
+            <td>Egg (Beaten)</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Curry Leaves</td>
+          </tr>
+          <tr>
+            <td>1 Pinch</td>
+            <td>Salt</td>
+          </tr>
+          
+        </table>
+      </div>
+      <div class="column">
+        <table>
+          <tr>
+            <th colspan="2">Nutrition Value</th>
+          </tr>
+          <tr>
+            <th>Type</th>
+            <th>Quantity</th>
+          </tr>
+          <tr>
+            <td>Carbohydrates</td>
+            <td>30.6 g</td>
+          </tr>
+          <tr>
+            <td>Energy</td>
+            <td>323.57 kcal</td>
+          </tr>
+          <tr>
+            <td>Fats</td>
+            <td>17.91 g</td>
+          </tr>
+          <tr>
+            <td>Protein</td>
+            <td>11.03 g</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <ul>
+      <li><strong>Process of Making :</strong></li>
+      <ol>
+        <li>Prepare ingredients as mentioned in the list.</li>
+        <li>Heat the oil and sauté the onions until they are soft and light brown. Add tomato, red chillies and curry leaves. Sauté, till the tomato has softened.</li>
+        <li>Add the beaten eggs and mix well, using a fork to break the eggs into small pieces as they cook (like scrambled eggs). Add salt to taste.</li>
+        <li>Cook the MAGGI Masala Noodles as per pack instructions and add to the Egg Bhurji preparation. Mix well.</li>
+        <li>Serve hot.</li>
+      </ol>
+    </ul>
+    <pre><img height="100" src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/ba20fcb8bc832d7749cea6fdc250b1d3.jpg?h=4462e40b&itok=OIyQJ-35" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/1e142accce986ff36685de685a52d29d.jpg?h=0ebdd0c0&itok=EceCSBqS" height="100" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/eef56f8fccd5bb04c9b833c6b6be926b.png?h=a74b8a74&itok=MlS3sSFp" height="100" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/9bb15e4f4f157576d626f01824fde5e8.jpg?h=775f3f9f&itok=VwXfsRnC" height="100" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/33430f1d3b67f373c18f518aea93812d.jpg?h=a141e9ea&itok=DreG_xdR" height="100" alt=""></pre>
+    </details>
+    <details>
+      <summary>Cumin Dal Shorba with Lemon MAGGI Noodles</summary>
+      <Fieldset>
+      <div class="row">
+        <div class="column">
+          <table>
+            <tr>
+              <th colspan="2">Ingredients</th>
+            </tr>
+            <tr>
+              <th>Quantity</th>
+              <th>Item Name</th>
+            </tr>
+            <tr>
+              <td>1 Packets</td>
+              <td>MAGGI 2-Minute Noodles (Masala)</td>
+            </tr>
+            <tr>
+              <td>1 Tablespoon</td>
+              <td> Oil</td>
+            </tr>
+            <tr>
+              <td>0.5 Tablespoon </td>
+              <td>Jeera</td>
+            </tr>
+            <tr>
+              <td>0.5 Cup </td>
+              <td>Onion (Chopped)</td>
+            </tr>
+            <tr>
+              <td>1 </td>
+              <td>Green Chillies (Chopped)</td>
+            </tr>
+            <tr>
+              <td>1 Tablespoon</td>
+              <td>Coriander Leaves (Chopped)</td>
+            </tr>
+            <tr>
+              <td>1 Cup</td>
+              <td>Cooked Dal</td>
+            </tr>
+            <tr>
+              <td>0.5 Cup</td>
+              <td>Warm Water</td>
+            </tr>
+            <tr>
+              <td>1 Tablespoon</td>
+              <td>Lemon Juice</td>
+            </tr>
+            
+          </table>
+        </div>
+        <div class="column">
+          <table>
+            <tr>
+              <th colspan="2">Nutrition Value</th>
+            </tr>
+            <tr>
+              <th>Type</th>
+              <th>Quantity</th>
+            </tr>
+            <tr>
+              <td>Carbohydrates</td>
+              <td>47.15 g</td>
+            </tr>
+            <tr>
+              <td>Energy</td>
+              <td>364.61 kcal</td>
+            </tr>
+            <tr>
+              <td>Fats</td>
+              <td>13.73 g</td>
+            </tr>
+            <tr>
+              <td>Protein</td>
+              <td>12.92 g</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Process of Making :</strong></li>
+        <ol>
+          <li>Prepare ingredients as mentioned in the list.</li>
+          <li>Cook the MAGGI Masala Noodles as per the instructions on the pack. Now, heat the oil, add the jeera and when it splutters add onions and green chilli. Sauté till golden-brown, add the cooked dal and water. Bring to a boil.</li>
+          <li>Add the cooked MAGGI Noodles to the above mix and simmer for a minute. Add a dash of lime juice and mix well. Don’t forget to garnish the Noodles with coriander leaves.</li>
+          <li>Serve hot!</li>
+        </ol>
+      </ul>
+      <pre><img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/ba20fcb8bc832d7749cea6fdc250b1d3.jpg?h=4462e40b&itok=OIyQJ-35" height="100" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/a8ecd43962f0b9887e7fd694ece87e01.png?h=d1cb525d&itok=hOgC-Ofl" height="100" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/d6dcaefeae7471de450732b8958b0096.png?h=d1cb525d&itok=IlFsZn2k" height="100" alt=""><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg><img src="https://www.maggi.in/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/281939b8fc8e57a186d29ccda617032a.jpg?h=a141e9ea&itok=LhY3OVzl" height="100" alt=""></pre>
+    </Fieldset>
+    </details>
+    <ul></ul>
+    <ul>
+      <li>For More Recipes <a href="https://www.maggi.in/en/recipes/maggi-noodles/"> Click Here</a> (You can know about 18 more Recipes) </li>
+    </ul>
+  </body>
+</html>
+<!-- <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z" fill="#000000"></path> </g></svg> -->
